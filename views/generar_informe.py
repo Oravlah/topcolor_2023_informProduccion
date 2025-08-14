@@ -63,7 +63,11 @@ host3 = os.environ.get('IP_API3')
 
 ###### Esto te obtiene la ruta actual donde esta el archivo nuevo_diseño.py de forma variable
 
-directorio_actual = os.getcwd()
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
+
+# sube un nivel para llegar a la raíz del proyecto
+ruta_grafico = os.path.join(directorio_actual, "..", "graficos", f"grafico_linea{i+1}.png")
+ruta_imagen = os.path.join(directorio_actual, "..", "imagenes", "rendimiento.png")
 
 #  del archivo PDF
 _archivo = "informe_topcolor.pdf"
